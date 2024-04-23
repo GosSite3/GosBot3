@@ -101,6 +101,8 @@ bot.onText(/Просмотреть отработанные номера/, async
             sendCurrentPage();
         });
         sendCurrentPage();
+    }else if(messagesToSendusers.length == 0){
+        bot.sendMessage(chatId, `Номеров ещё нет`, options)
     }
     else{
         const messageText = messagesToSendusers.map(message=>`<pre>${message}</pre>`).join('\n');
